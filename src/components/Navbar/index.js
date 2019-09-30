@@ -1,18 +1,14 @@
-import React from "react";
-import "./style.css";
+import React from 'react';
+import './Navbar.css';
 
-function Navbar(props) {
-  // return <div className="wrapper">{props.children}</div>;
-  console.log(props);
-  return (
-      <nav className="navbar">
-        <ul>
-          <li className="brand"><a href="/">Clicky Game</a></li>
-          <li className="">Click an image to begin!</li>
-          <li>Score: {props.score} | Top Score: {props.highscore}</li>
-        </ul>
-      </nav>
-  )
-}
+const Navbar = props => (
+  <div className="navbar ">
+    <div>Clicky Game</div>
+    <div className={props.navMsgColor}>{props.navMessage}</div>
+    <div>
+      Score: {props.score} <span className="pipe">|</span> High Score: {props.highScore}
+    </div>
+  </div>
+);
 
 export default Navbar;
